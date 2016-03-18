@@ -1,0 +1,105 @@
+#Kaitlin Morgan
+#Assignment 4
+
+#<!----------Project 3: User Input--------->
+
+#Previously explained functions listed below, new code beneath them
+
+def simpleExpressionIsValid(expr):
+    add = "+"
+    sub = "-"
+    mult = "*"
+    div = "/"
+
+    addFind = expr.find(add)
+    subFind = expr.find(sub)
+    multFind = expr.find(mult)
+    divFind = expr.find(div)
+
+    add_num1 = expr[:addFind]
+    add_num2 = expr[addFind+1:]
+
+    sub_num1 = expr[:subFind]
+    sub_num2 = expr[subFind+1:]
+
+    mult_num1 = expr[:multFind]
+    mult_num2 = expr[multFind+1:]
+
+    div_num1 = expr[:divFind]
+    div_num2 = expr[divFind+1:]
+
+    if add_num1.isdigit() and add_num2.isdigit():
+        return "Valid"
+
+    if sub_num1.isdigit() and sub_num2.isdigit():
+        return "Valid"
+
+    if mult_num1.isdigit() and mult_num2.isdigit():
+        return "Valid"
+
+    if div_num1.isdigit() and div_num2.isdigit():
+        return "Valid"
+
+    else:
+        return "Invalid"
+
+def addition(expr):
+    addFind = expr.find("+")
+    add_num1 = float(expr[:addFind])
+    add_num2 = float(expr[addFind +1:])
+    Sum = float(add_num1+add_num2)
+    return Sum
+
+def subtraction(expr):
+    subFind = expr.find("-")
+    sub_num1 = float(expr[:subFind])
+    sub_num2 = float(expr[subFind +1:])
+    Diff = float(sub_num1-sub_num2)
+    return Diff
+
+def multiplication(expr):
+    multFind = expr.find("*")
+    mult_num1 = float(expr[0:multFind])
+    mult_num2 = float(expr [multFind +1:])
+    Prod = float(mult_num1*mult_num2)
+    return Prod
+
+def division(expr):
+    divFind = expr.find("/")
+    div_num1 = float(expr[0:divFind])
+    div_num2 = float(expr [divFind +1:])
+    Quo = float(div_num1/div_num2)
+    return Quo
+
+def simpleExpression(expr):
+    opp = input("Enter the opperation you used (+, -, *, or /): ")
+    if opp == "+":
+        return addition(expr)
+    elif opp == "-":
+        return subtraction(expr)
+    elif opp == "*":
+        return multiplication(expr)
+    elif opp == "/":
+        return division(expr)
+    else:
+        return "Invalid"
+
+#/*----------------------------------------------------------------
+
+#Small into
+print("Welcome to Calculator!")
+#If user enters 'end', program stops otherwose continues
+end = input("Type 'end' to turn off or hit enter to continue: ")
+#Until program is ended by user, continued asking for expressions
+while end != "end":
+#User input for expression
+    expr = input("Enter a simple expression: ")
+#Proceeds only if expression is valid
+    if simpleExpressionIsValid(expr) == "Valid":
+#Print expression = answer
+        print(expr, "=", simpleExpression(expr))
+#Asks again if user wants to end program
+        end = input("Type 'end' to turn off or hit enter to continue: ")
+#If bad expression is entered, spits out invalid and asks for another
+    else:
+        print("Invalid expression")
