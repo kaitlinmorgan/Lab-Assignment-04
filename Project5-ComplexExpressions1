@@ -109,9 +109,9 @@ while end != "end":
 #Check to see if it's valid to proceed
     if complexExpressionIsValid(expr) == "Valid":
 #Printing format expression = answer
-        print(expr, "=", complexExpression(expr))
+        print(expr, "=", complexExpression(expr)*complexExpression(expr)*complexExpression(expr))
 #Defining last expression as list of last thing printed
-        lastExpr = [expr, "=", complexExpression(expr)]
+        lastExpr = [expr, "=", complexExpression(expr)**3]
 #Adds latest calculation to masterlist
         memoryList.append(lastExpr)
 #Prints list of old enteries
@@ -121,3 +121,4 @@ while end != "end":
 #Asks for new expression if previous is invalid, tells user its invalid
     else:
         print("Invalid expression")
+        
