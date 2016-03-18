@@ -1,0 +1,49 @@
+#Kaitlin Morgan
+#Assignment 4
+
+#<!----------Project 1: Check Validity--------->
+
+#Defining a name for the function
+def simpleExpressionIsValid(expr):
+#Setting necessary string operations equal to variables
+    add = "+"
+    sub = "-"
+    mult = "*"
+    div = "/"
+#Finding each of the operations within the expression
+    addFind = expr.find(add)
+    subFind = expr.find(sub)
+    multFind = expr.find(mult)
+    divFind = expr.find(div)
+#Finding the two terms before and after addition symbol
+    add_num1 = expr[:addFind]
+    add_num2 = expr[addFind+1:]
+#Finding the two terms before and after subtraction symbol
+    sub_num1 = expr[:subFind]
+    sub_num2 = expr[subFind+1:]
+#Finding the two terms before and after multiplication symbol
+    mult_num1 = expr[:multFind]
+    mult_num2 = expr[multFind+1:]
+#Finding the two terms before and after division symbol
+    div_num1 = expr[:divFind]
+    div_num2 = expr[divFind+1:]
+#If the two entries between plus sign are numbers then valid
+    if add_num1.isdigit() and add_num2.isdigit():
+        return "Valid"
+#If the two entries between minus sign are numbers then valid
+    if sub_num1.isdigit() and sub_num2.isdigit():
+        return "Valid"
+#If the two entries between multiplication sign are numbers then valid
+    if mult_num1.isdigit() and mult_num2.isdigit():
+        return "Valid"
+#If the two entries between division sign are numbers then valid
+    if div_num1.isdigit() and div_num2.isdigit():
+        return "Valid"
+#If the two entries are letters, between an invalid character/symbol/sign,
+#contain more than one sign, etc. then invalid
+    else:
+        return "Invalid"
+#Asks user to enter expression
+expr = input("Enter a simple expression: ")
+#Says if the expression is valid or not
+print(simpleExpressionIsValid(expr))
