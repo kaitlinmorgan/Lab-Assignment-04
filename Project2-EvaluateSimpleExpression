@@ -1,0 +1,61 @@
+#Kaitlin Morgan
+#Assignment 4
+
+#<!----------Project 2: Simple Expression--------->
+
+#Definiting addition function, finds "+" and numbers before/after
+def addition(expr):
+    addFind = expr.find("+")
+    add_num1 = float(expr[:addFind])
+    add_num2 = float(expr[addFind +1:])
+#Adds numbers to find the sum, returns just the sum
+    Sum = float(add_num1+add_num2)
+    return Sum
+#Definiting subtraction function, finds "-" and numbers before/after
+def subtraction(expr):
+    subFind = expr.find("-")
+    sub_num1 = float(expr[:subFind])
+    sub_num2 = float(expr[subFind +1:])
+#Subtracts numbers to find the difference, returns just the difference
+    Diff = float(sub_num1-sub_num2)
+    return Diff
+#Definiting multiplication function, finds "*" and numbers before/after
+def multiplication(expr):
+    multFind = expr.find("*")
+    mult_num1 = float(expr[0:multFind])
+    mult_num2 = float(expr [multFind +1:])
+#Multiplies numbers to find the product, returns just the product
+    Prod = float(mult_num1*mult_num2)
+    return Prod
+#Definiting addition function, finds "/" and numbers before/after
+def division(expr):
+    divFind = expr.find("/")
+    div_num1 = float(expr[0:divFind])
+    div_num2 = float(expr [divFind +1:])
+#Divides numbers to find the quotient, returns just the quotient
+    Quo = float(div_num1/div_num2)
+    return Quo
+#Defining simple expression function
+def simpleExpression(expr):
+#Takes in user input for operator being used
+    opp = input("Enter the operation you used (+, -, *, or /): ")
+#If "+" uses addition function to compute and returns sum
+    if opp == "+":
+        return addition(expr)
+#If "-" uses subtraction function to compute and returns difference
+    elif opp == "-":
+        return subtraction(expr)
+#If "*" uses multiplication function to compute and returns product
+    elif opp == "*":
+        return multiplication(expr)
+#If "/" uses division function to compute and returns quotient
+    elif opp == "/":
+        return division(expr)
+#If none of the signs are enterted, returns invalid
+    else:
+        return "Invalid"
+
+#Asks user to input an expression
+expr = input("Enter a simple expression: ")
+#Gives expression value after user confirms operation in use
+print(simpleExpression(expr))
