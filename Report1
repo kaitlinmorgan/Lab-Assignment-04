@@ -1,0 +1,53 @@
+#Kaitlin Morgan
+#Assignment 4
+
+#<!----------Report 1--------->
+
+The objectives of this program were to use definitions to create a simple
+calculator with more complex parts such as identifying parenthesis, complex
+expressions, storing a memory infinitely using lists, and continue using the
+find function.  The final result of the program was mean to be a fully
+functioning calculator able to replicate a normal simple calculator and its
+operations.
+
+In this code I used some main variables for function definitions: addition (added
+the two numbers in the expression), subtraction (subtracted the two numbers in
+the expression), multiplication (multiplied the two numbers in the expression),
+and division (divided both numbers in the expression).  I used the required
+function names simpleExpressionIsValid (determined validity of the expression
+based on if the two numbers between the operation sign were digits) and
+simpleExpression, which used my double checking the operation method to actually
+perform the desired opperation.  Find and num's were according to their operations
+add, sub, mult, and div.  Sum, Diff, Prod, and Quo refered to the sum, difference,
+product, and quotient.  Expr was used to name the user input expression.
+memoryList was used to store the previously calculated expressions.  For the
+complex expressions, I used complexExpressionIsValid and complexExpression, which
+both basically did the same as the simple expressions except they took other
+things into account like parenthesis and multiple operators.
+
+The code works by taking in user input, starting with a simple expression,
+finding the operation symbol and using that to determine the numbers before
+and after it.  One the numbers are determined, they are either added, subtracted,
+multiplied, or divided depending on the specified operation.  The calculator
+should be able to also recognize parenthesis and sort them from the numbers.
+The parenthesis should also be able to determine complex expression and perform
+their operations.  The calculator should have a memory storage that is infinite
+to keep track of previous operations.  The listed storage should be able to be
+accessed by the user with a 'last' command.  The calculator program should
+stop running when the user types 'end'.
+
+I ran into a few problems with this program, mainly with the complex expressions,
+which I ultimately did not manage to master.  In the simple expression portions
+I found those fairly simple, although some things were a bit difficult with
+the way I programmed my calculator to double check the operation.  If an invalid
+expression was entered before the second prompt for the operation, there would
+be an error and the program would crash.  However, if an invalid operation and
+correct initial expression were entered it would work just fine and print invalid.
+In the complex expressions, I had trouble getting it to recognize the parenthesis.
+I ran into this problem with the operation sign for the simple expressions as
+well, but managed to fix it at least for simple expressions.  For storing information,
+I ran into trouble for the complex expressions as well.  The complex expressions
+did not work well with my code that used the operators because it required more
+than one operation.  So, while I believe I managed to do most of the simple
+expression parts correctly, the complex expressions will probably still crash
+as I could not get them to work completely.
